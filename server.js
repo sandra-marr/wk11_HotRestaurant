@@ -31,3 +31,16 @@ fs.readFile("db/db.json", "utf8", (err, data) => {
     }
 
 })
+
+
+
+/////////////
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'landingPage.html')));
+
+app.get('/reservations', (req, res) => res.sendFile(path.join(__dirname, 'reservations.html')));
+
+app.get('/tables', (req, res) => res.sendFile(path.join(__dirname, 'tables.html')));
+
+
+// app.get('/api/tables', (req, res) => res.json(tables));
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
