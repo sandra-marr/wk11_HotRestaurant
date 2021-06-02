@@ -13,9 +13,9 @@ app.use(express.static(__dirname));
 
 fs.readFile("db/db.json", "utf8", (err, data) => {
     if (err) throw err
-    restaurant = JSON.parse(data)
+    let restaurant = JSON.parse(data)
 
-    app.post("/api/reservation", (req, res) => {
+    app.post("/api/reservations", (req, res) => {
         let newRes = req.body;
         restaurant.push(newRes);
         updateData();
